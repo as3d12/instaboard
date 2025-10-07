@@ -1,0 +1,205 @@
+.user-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--shadow-light);
+  padding: 24px;
+  margin: 15px;
+  width: 320px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  border-radius: 16px 16px 0 0;
+}
+
+.user-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.user-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.user-card:hover .user-avatar {
+  transform: scale(1.1);
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-name {
+  margin: 0 0 8px 0;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.user-email {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  word-break: break-word;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.user-card:hover .user-email {
+  opacity: 1;
+}
+
+.user-card-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.like-button {
+  background: var(--button-bg-primary);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.like-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.like-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.like-button:hover {
+  background: linear-gradient(135deg, #ff5252, #e55100);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.like-button:active {
+  transform: translateY(0);
+}
+
+.toggle-email-button {
+  background: var(--button-bg-secondary);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-email-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.toggle-email-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.toggle-email-button:hover {
+  background: linear-gradient(135deg, #26d0ce, #2a9d8f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+.toggle-email-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .user-card {
+    width: 290px;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .user-name {
+    font-size: 1.2em;
+  }
+  
+  .user-card-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .like-button,
+  .toggle-email-button {
+    padding: 10px 16px;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    width: 260px;
+    padding: 16px;
+  }
+}
