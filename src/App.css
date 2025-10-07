@@ -1,0 +1,86 @@
+:root {
+  /* Light theme variables */
+  --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-secondary: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --text-light: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.3);
+  --card-bg: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --button-bg-primary: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  --button-bg-secondary: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-light: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  --card-bg: #2d3748;
+  --input-bg: rgba(45, 55, 72, 0.9);
+  --button-bg-primary: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  --button-bg-secondary: linear-gradient(135deg, #4ecdc4, #44a08d);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive design utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
